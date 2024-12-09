@@ -15,7 +15,7 @@ dependencies:
   flutter_dotenv: ^5.2.1
   flutter_screenutil: ^5.9.3
   connectivity_plus: ^6.1.0
-  
+  flutter_native_splash: ^2.4.3
 
 dev_dependencies:
   flutter_test:
@@ -26,5 +26,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+    - lib/.env.dev
+    - lib/.env.production
+  
+  
 
  

@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "ansicolor",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/ansicolor-2.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "archive",
       "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/archive-3.6.1",
       "packageUri": "lib/",
@@ -74,6 +80,12 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "csslib",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/csslib-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.8",
       "packageUri": "lib/",
@@ -140,6 +152,12 @@
       "languageVersion": "3.1"
     },
     {
+      "name": "flutter_native_splash",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/flutter_native_splash-2.4.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "flutter_screenutil",
       "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/flutter_screenutil-5.9.3",
       "packageUri": "lib/",
@@ -154,6 +172,12 @@
     {
       "name": "flutter_web_plugins",
       "rootUri": "file:///Users/mac/dev/fluttersdk/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "html",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/html-0.15.5",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -284,6 +308,12 @@
       "languageVersion": "3.5"
     },
     {
+      "name": "universal_io",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/universal_io-2.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -326,7 +356,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-12-06T14:54:25.953298Z",
+  "generated": "2024-12-09T10:33:35.808359Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Users/mac/dev/fluttersdk/flutter",
