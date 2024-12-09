@@ -15,6 +15,8 @@ class EnvVarialbe {
   String get envType => _envType;
 
   Future<void> init({required EnvTypeEnum envType}) async {
+    await dotenv.load(fileName: "lib/.env.dev");
+    await dotenv.load(fileName: "lib/.env.production");
     switch (envType) {
       case EnvTypeEnum.development:
         _envType = 'dev';
