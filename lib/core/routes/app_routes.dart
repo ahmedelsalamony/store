@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:store/screens/first_screen.dart';
+import 'package:store/screens/second_screen.dart';
 
 class AppRoutes {
   static const String home = "/";
