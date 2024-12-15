@@ -16,19 +16,22 @@ class StoreApp extends StatelessWidget {
       valueListenable: ConnectivityController.instance.isOnline,
       builder: (context, value, child) {
         if (value) {
-          return ScreenUtilInit(
-            designSize: const Size(360, 690),
-            minTextAdapt: true,
-            child: MaterialApp(
-              title: 'Flutter Demo',
-              theme: darkTheme(),
-              locale: const Locale('en'),
-              localizationsDelegates:
-                  AppLocalizationsSetup.localizationsDelegates,
-              localeResolutionCallback:
-                  AppLocalizationsSetup.localeResolutionCallback,
-              supportedLocales: AppLocalizationsSetup.supportedLocales,
-              home: const FirstScreen(),
+          return GestureDetector(
+            onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+            child: ScreenUtilInit(
+              designSize: const Size(360, 690),
+              minTextAdapt: true,
+              child: MaterialApp(
+                title: 'Flutter Demo',
+                theme: darkTheme(),
+                locale: const Locale('en'),
+                localizationsDelegates:
+                    AppLocalizationsSetup.localizationsDelegates,
+                localeResolutionCallback:
+                    AppLocalizationsSetup.localeResolutionCallback,
+                supportedLocales: AppLocalizationsSetup.supportedLocales,
+                home: const FirstScreen(),
+              ),
             ),
           );
         } else {
