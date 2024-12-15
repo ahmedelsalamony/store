@@ -152,6 +152,12 @@
       "languageVersion": "3.1"
     },
     {
+      "name": "flutter_localizations",
+      "rootUri": "file:///Users/mac/dev/fluttersdk/flutter/packages/flutter_localizations",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "flutter_native_splash",
       "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/flutter_native_splash-2.4.3",
       "packageUri": "lib/",
@@ -186,6 +192,12 @@
       "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/image-4.3.0",
       "packageUri": "lib/",
       "languageVersion": "2.15"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/intl-0.19.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "json_annotation",
@@ -356,7 +368,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-12-12T12:42:11.914980Z",
+  "generated": "2024-12-15T14:35:25.139306Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Users/mac/dev/fluttersdk/flutter",

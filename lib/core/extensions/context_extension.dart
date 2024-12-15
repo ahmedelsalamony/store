@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store/core/language/app_localizations.dart';
 
 extension ContextExtension on BuildContext {
   double get width => MediaQuery.of(this).size.width;
@@ -6,6 +7,10 @@ extension ContextExtension on BuildContext {
 
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) async {
     return Navigator.pushNamed(this, routeName);
+  }
+
+  String translate(String langKey) {
+    return AppLocalizations.of(this)!.translate(langKey).toString();
   }
 
   Future<dynamic> pushReplacementNamed(String routeName,

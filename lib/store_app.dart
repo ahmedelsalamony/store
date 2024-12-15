@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store/core/app/connectivity_controller.dart';
+import 'package:store/core/language/app_localizations.dart';
+import 'package:store/core/language/app_localizations_setup.dart';
+import 'package:store/core/styles/theme/app_theme.dart';
+import 'package:store/screens/first_screen.dart';
 
 class StoreApp extends StatelessWidget {
   const StoreApp({super.key});
@@ -17,11 +21,14 @@ class StoreApp extends StatelessWidget {
             minTextAdapt: true,
             child: MaterialApp(
               title: 'Flutter Demo',
-              theme: ThemeData(
-                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                useMaterial3: true,
-              ),
-              home: const Scaffold(body: Center(child: Text("FlutterApp"))),
+              theme: darkTheme(),
+              locale: const Locale('en'),
+              localizationsDelegates:
+                  AppLocalizationsSetup.localizationsDelegates,
+              localeResolutionCallback:
+                  AppLocalizationsSetup.localeResolutionCallback,
+              supportedLocales: AppLocalizationsSetup.supportedLocales,
+              home: const FirstScreen(),
             ),
           );
         } else {

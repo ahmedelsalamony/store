@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:store/core/styles/theme/color_extension.dart';
 import 'package:store/core/styles/theme/image_extension.dart';
 
-ThemeData dartTheme() {
+ThemeData darkTheme() {
   return ThemeData(
       scaffoldBackgroundColor: Colors.black,
       useMaterial3: true,
