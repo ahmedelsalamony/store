@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store/core/app/connectivity_controller.dart';
 import 'package:store/core/language/app_localizations.dart';
 import 'package:store/core/language/app_localizations_setup.dart';
+import 'package:store/core/routes/app_routes.dart';
 import 'package:store/core/styles/theme/app_theme.dart';
-import 'package:store/screens/first_screen.dart';
 
 class StoreApp extends StatelessWidget {
   const StoreApp({super.key});
@@ -30,12 +30,22 @@ class StoreApp extends StatelessWidget {
                 localeResolutionCallback:
                     AppLocalizationsSetup.localeResolutionCallback,
                 supportedLocales: AppLocalizationsSetup.supportedLocales,
-                home: const FirstScreen(),
+                onGenerateRoute: AppRoutes.generateRoute,
+                initialRoute: AppRoutes.firstScreen,
+                builder: (context, child) {
+                  return Scaffold(
+                    body: Builder(builder: (context) {
+                      ConnectivityController.instance.init();
+                      return child!;
+                    }),
+                  );
+                },
               ),
             ),
           );
         } else {
-          return const Scaffold(body: Center(child: Text("No Internet")));
+          return const MaterialApp(
+              home: Scaffold(body: Center(child: Text("No Internet"))));
         }
       },
     );

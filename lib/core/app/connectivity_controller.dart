@@ -24,14 +24,17 @@ class ConnectivityController {
   bool isInternetConnected(List<ConnectivityResult> result) {
     if (result.contains(ConnectivityResult.mobile)) {
       // Mobile network available.
+      isOnline.value = true;
       return true;
     } else if (result.contains(ConnectivityResult.wifi)) {
       // Wi-fi is available.
       // Note for Android:
       // When both mobile and Wi-Fi are turned on system will return Wi-Fi only as active network type
+      isOnline.value = true;
       return true;
     } else if (result.contains(ConnectivityResult.none)) {
       // No available network types
+      isOnline.value = false;
       return false;
     }
     return false;
