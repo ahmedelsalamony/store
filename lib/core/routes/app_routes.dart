@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:store/screens/first_screen.dart';
-import 'package:store/screens/second_screen.dart';
+import 'package:store/features/auth/presentation/screens/login_screen.dart';
+import 'package:store/features/second_screen.dart';
 
 class AppRoutes {
   static const String home = "/";
-  static const String firstScreen = "/FirstScreen";
+  static const String firstScreen = "/loginScreen";
   static const String secondScreen = "/SecondScreen";
 
   static Route<void> generateRoute(RouteSettings settings) {
@@ -13,13 +13,13 @@ class AppRoutes {
 
     switch (settings.name) {
       case home:
-        return MaterialPageRoute(builder: (_) => const FirstScreen());
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
       case firstScreen:
-        return MaterialPageRoute(builder: (_) => const FirstScreen());
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
       case secondScreen:
         return MaterialPageRoute(builder: (_) => const SecondScreen());
       default:
-        return MaterialPageRoute(builder: (_) => const FirstScreen());
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
     }
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store/core/language/app_localizations.dart';
+import 'package:store/core/styles/theme/color_extension.dart';
 
 extension ContextExtension on BuildContext {
   double get width => MediaQuery.of(this).size.width;
@@ -8,6 +9,10 @@ extension ContextExtension on BuildContext {
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) async {
     return Navigator.pushNamed(this, routeName);
   }
+
+  MyColors get color => Theme.of(this).extension<MyColors>()!;
+
+  TextStyle get textStyle => Theme.of(this).textTheme.bodySmall!;
 
   String translate(String langKey) {
     return AppLocalizations.of(this)!.translate(langKey).toString();
