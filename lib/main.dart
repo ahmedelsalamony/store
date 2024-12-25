@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store/core/app/bloc_observer.dart';
 import 'package:store/core/app/connectivity_controller.dart';
 import 'package:store/env.variables.dart';
 import 'package:store/store_app.dart';
@@ -11,6 +13,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   ConnectivityController.instance.init();
   await EnvVarialbe.instance.init(envType: EnvTypeEnum.development);
+  Bloc.observer = AppBlocObserver();
   Platform.isAndroid
       ? await Firebase.initializeApp(
           options: const FirebaseOptions(
