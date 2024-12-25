@@ -6,13 +6,14 @@ import 'package:store/core/extensions/context_extension.dart';
 import 'package:store/core/language/lang_keys.dart';
 import 'package:store/core/routes/app_routes.dart';
 import 'package:store/core/styles/fonts/font_family_weight.dart';
-import 'package:store/features/auth/presentation/widgets/login_button.dart';
 import 'package:store/features/auth/presentation/widgets/login_text_form.dart';
+import 'package:store/features/auth/presentation/widgets/signup_button.dart';
+import 'package:store/features/auth/presentation/widgets/singup_text_form.dart';
 import 'package:store/features/auth/presentation/widgets/theme_and_lang.dart';
 import 'package:store/features/auth/presentation/widgets/welcome_text.dart';
 
-class LoginBody extends StatelessWidget {
-  const LoginBody({super.key});
+class SignupBody extends StatelessWidget {
+  const SignupBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,29 +31,26 @@ class LoginBody extends StatelessWidget {
               height: 24.h,
             ),
             const WelcomeText(
-              title: LangKeys.login,
-              description: LangKeys.welcome,
+              title: LangKeys.signUp,
+              description: LangKeys.signUpWelcome,
             ),
             SizedBox(
               height: 24.h,
             ),
-            const LoginTextForm(),
+            const SignupTextForm(),
             SizedBox(
               height: 24.h,
             ),
-            const CustomFadeInUp(
-              duration: 400,
-              child: LoginButton(),
-            ),
+            const SignupButton(),
             SizedBox(
               height: 24.h,
             ),
             CustomFadeInUp(
               duration: 400,
               child: InkWell(
-                onTap: () => context.pushNamed(AppRoutes.signupScreen),
+                onTap: () => context.pushNamed(AppRoutes.home),
                 child: TextApp(
-                    text: context.translate(LangKeys.createAccount),
+                    text: context.translate(LangKeys.login),
                     theme: context.textStyle.copyWith(
                         color: context.color.bluePinkLight,
                         fontWeight: FontFamilyWeight.bold,
