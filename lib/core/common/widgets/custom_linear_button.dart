@@ -22,7 +22,7 @@ class CustomLinearButton extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         height: height ?? 44.h,
-        width: width ?? 44.w,
+        width: width ?? 60.w,
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),

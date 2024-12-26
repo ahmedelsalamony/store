@@ -6,6 +6,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:store/core/app/bloc_observer.dart';
 import 'package:store/core/app/connectivity_controller.dart';
+import 'package:store/core/di/injection_container.dart';
+import 'package:store/core/service/shared_prefs/shared_pref.dart';
+import 'package:store/core/styles/fonts/font_family_helper.dart';
 import 'package:store/env.variables.dart';
 import 'package:store/store_app.dart';
 
@@ -13,6 +16,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   ConnectivityController.instance.init();
   await EnvVarialbe.instance.init(envType: EnvTypeEnum.development);
+  SharedPref().instantiatePreferences();
   Bloc.observer = AppBlocObserver();
   Platform.isAndroid
       ? await Firebase.initializeApp(
@@ -28,6 +32,8 @@ void main() async {
               messagingSenderId: "588319789466",
               projectId: "store-18a85"),
         );
+
+  setupInjectionContainer();
   await SystemChrome.setPreferredOrientations(
     [
       DeviceOrientation.portraitUp,
