@@ -364,10 +364,10 @@ class __$$ChangeLangugeImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lang = freezed,
+    Object? lang = null,
   }) {
     return _then(_$ChangeLangugeImpl(
-      lang: freezed == lang
+      lang: null == lang
           ? _value.lang
           : lang // ignore: cast_nullable_to_non_nullable
               as Locale,
@@ -393,12 +393,11 @@ class _$ChangeLangugeImpl implements _ChangeLanguge {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChangeLangugeImpl &&
-            const DeepCollectionEquality().equals(other.lang, lang));
+            (identical(other.lang, lang) || other.lang == lang));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(lang));
+  int get hashCode => Object.hash(runtimeType, lang);
 
   /// Create a copy of AppState
   /// with the given fields replaced by the non-null parameter values.
