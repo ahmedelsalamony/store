@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store/core/di/injection_container.dart';
+import 'package:store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:store/features/auth/presentation/screens/login_screen.dart';
 import 'package:store/features/auth/presentation/screens/signup_screen.dart';
 import 'package:store/features/second_screen.dart';
@@ -15,7 +18,11 @@ class AppRoutes {
 
     switch (settings.name) {
       case home:
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => sl<AuthBloc>(),
+                  child: const LoginScreen(),
+                ));
       case firstScreen:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
       case signupScreen:
