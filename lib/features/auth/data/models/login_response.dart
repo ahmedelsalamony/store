@@ -1,28 +1,25 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'login_response.g.dart';
 
 @JsonSerializable()
 class LoginResponse {
-  final LoginDataModel? data;
+  final LoginDataModel data;
 
-  LoginResponse({this.data});
+  LoginResponse(this.data);
 
-  factory LoginResponse.fromJson(String source) =>
-      _$LoginResponseFromJson(json.decode(source));
+  factory LoginResponse.fromJson(Map<String, dynamic> json) =>
+      _$LoginResponseFromJson(json);
 }
 
 @JsonSerializable()
 class LoginDataModel {
-  final LoginModel? login;
+  final LoginModel login;
 
-  LoginDataModel({this.login});
+  LoginDataModel(this.login);
 
-  factory LoginDataModel.fromJson(String source) =>
-      _$LoginDataModelFromJson(json.decode(source));
+  factory LoginDataModel.fromJson(Map<String, dynamic> json) =>
+      _$LoginDataModelFromJson(json);
 }
 
 @JsonSerializable()
@@ -34,6 +31,6 @@ class LoginModel {
 
   LoginModel({this.token, this.refreshToken});
 
-  factory LoginModel.fromJson(String source) =>
-      _$LoginModelFromJson(json.decode(source));
+  factory LoginModel.fromJson(Map<String, dynamic> json) =>
+      _$LoginModelFromJson(json);
 }

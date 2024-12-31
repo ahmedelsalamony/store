@@ -48,7 +48,15 @@ class StoreApp extends StatelessWidget {
                           AppLocalizationsSetup.localeResolutionCallback,
                       supportedLocales: AppLocalizationsSetup.supportedLocales,
                       onGenerateRoute: AppRoutes.generateRoute,
-                      initialRoute: AppRoutes.firstScreen,
+                      initialRoute: SharedPref.sharedPreferences
+                                  .getString(PrefsKeys.accessToken) !=
+                              null
+                          ? SharedPref.sharedPreferences
+                                      .getString(PrefsKeys.userRole) ==
+                                  "admin"
+                              ? AppRoutes.homeAdmin
+                              : AppRoutes.homeCustomer
+                          : AppRoutes.loginScreen,
                       builder: (context, child) {
                         return Scaffold(
                           body: Builder(builder: (context) {
