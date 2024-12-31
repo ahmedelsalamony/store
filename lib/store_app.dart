@@ -41,6 +41,7 @@ class StoreApp extends StatelessWidget {
                     return MaterialApp(
                       title: 'Flutter Demo',
                       theme: cubit.isDark ? darkTheme() : lightTheme(),
+                      navigatorKey: sl<GlobalKey<NavigatorState>>(),
                       locale: cubit.getSavedLanguage(),
                       localizationsDelegates:
                           AppLocalizationsSetup.localizationsDelegates,

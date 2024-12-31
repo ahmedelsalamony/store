@@ -30,7 +30,6 @@ class _LoginButtonState extends State<LoginButton> {
           }
         }, failure: (error) {
           ShowToast.showToastErrorTop(
-            context: context,
             message: error.errorMessage,
           );
         });

@@ -6,6 +6,7 @@ import 'package:store/core/extensions/context_extension.dart';
 import 'package:store/core/language/lang_keys.dart';
 import 'package:store/core/routes/app_routes.dart';
 import 'package:store/core/styles/fonts/font_family_weight.dart';
+import 'package:store/core/utils/image_pick_utils.dart';
 import 'package:store/features/auth/presentation/widgets/signup_button.dart';
 import 'package:store/features/auth/presentation/widgets/singup_text_form.dart';
 import 'package:store/features/auth/presentation/widgets/theme_and_lang.dart';
@@ -36,11 +37,16 @@ class SignupBody extends StatelessWidget {
             SizedBox(
               height: 24.h,
             ),
-            CircleAvatar(
-              backgroundColor: context.color.bluePinkLight,
-              backgroundImage: const NetworkImage(
-                  'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80'),
-              radius: 50.r,
+            InkWell(
+              onTap: () {
+                ImagePickUtils.instance.pickImage();
+              },
+              child: CircleAvatar(
+                backgroundColor: context.color.bluePinkLight,
+                backgroundImage: const NetworkImage(
+                    'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80'),
+                radius: 50.r,
+              ),
             ),
             SizedBox(
               height: 24.h,
