@@ -18,6 +18,7 @@ class LangKeys {
   static const String validName = 'valid_name';
   static const String validPickImage = 'valid_pick_image';
   static const String imageUploaded = 'image_uploaded';
+  static const String uploadImageError = 'upload_image_error';
   static const String imageRemoved = 'image_removed';
   static const String chooseProducts = 'choose_products';
   static const String applicationFeatures = 'application_features';

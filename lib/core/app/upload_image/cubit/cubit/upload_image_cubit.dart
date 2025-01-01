@@ -32,8 +32,8 @@ class UploadImageCubit extends Cubit<UploadImageState> {
     });
   }
 
-  removeImage(String imageUrl) async {
-    imageUrl = '';
-    emit(UploadImageState.remove(imageUrl: imageUrl));
+  removeImage() async {
+    getImageUrl = '';
+    emit(const UploadImageState.remove());
   }
 }

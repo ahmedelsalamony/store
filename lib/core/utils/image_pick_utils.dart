@@ -19,7 +19,7 @@ class ImagePickUtils {
       return XFile(result.path);
     } catch (e) {
       final permissionStatus = await Permission.photos.request();
-      if (permissionStatus.isPermanentlyDenied) {
+      if (permissionStatus.isDenied) {
         await showPermissionDialog();
       } else {
         debugPrint("image picker Exception ===> $e");

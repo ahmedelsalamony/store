@@ -22,7 +22,7 @@ mixin _$UploadImageState {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function() failure,
-    required TResult Function(String imageUrl) remove,
+    required TResult Function() remove,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,7 +31,7 @@ mixin _$UploadImageState {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function()? failure,
-    TResult? Function(String imageUrl)? remove,
+    TResult? Function()? remove,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +40,7 @@ mixin _$UploadImageState {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function()? failure,
-    TResult Function(String imageUrl)? remove,
+    TResult Function()? remove,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,7 +140,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function() failure,
-    required TResult Function(String imageUrl) remove,
+    required TResult Function() remove,
   }) {
     return initial();
   }
@@ -152,7 +152,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function()? failure,
-    TResult? Function(String imageUrl)? remove,
+    TResult? Function()? remove,
   }) {
     return initial?.call();
   }
@@ -164,7 +164,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function()? failure,
-    TResult Function(String imageUrl)? remove,
+    TResult Function()? remove,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -263,7 +263,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function() failure,
-    required TResult Function(String imageUrl) remove,
+    required TResult Function() remove,
   }) {
     return loading();
   }
@@ -275,7 +275,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function()? failure,
-    TResult? Function(String imageUrl)? remove,
+    TResult? Function()? remove,
   }) {
     return loading?.call();
   }
@@ -287,7 +287,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function()? failure,
-    TResult Function(String imageUrl)? remove,
+    TResult Function()? remove,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -386,7 +386,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function() failure,
-    required TResult Function(String imageUrl) remove,
+    required TResult Function() remove,
   }) {
     return success();
   }
@@ -398,7 +398,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function()? failure,
-    TResult? Function(String imageUrl)? remove,
+    TResult? Function()? remove,
   }) {
     return success?.call();
   }
@@ -410,7 +410,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function()? failure,
-    TResult Function(String imageUrl)? remove,
+    TResult Function()? remove,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -509,7 +509,7 @@ class _$FailureImpl implements _Failure {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function() failure,
-    required TResult Function(String imageUrl) remove,
+    required TResult Function() remove,
   }) {
     return failure();
   }
@@ -521,7 +521,7 @@ class _$FailureImpl implements _Failure {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function()? failure,
-    TResult? Function(String imageUrl)? remove,
+    TResult? Function()? remove,
   }) {
     return failure?.call();
   }
@@ -533,7 +533,7 @@ class _$FailureImpl implements _Failure {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function()? failure,
-    TResult Function(String imageUrl)? remove,
+    TResult Function()? remove,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -592,8 +592,6 @@ abstract class _$$RemoveImplCopyWith<$Res> {
   factory _$$RemoveImplCopyWith(
           _$RemoveImpl value, $Res Function(_$RemoveImpl) then) =
       __$$RemoveImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String imageUrl});
 }
 
 /// @nodoc
@@ -606,52 +604,26 @@ class __$$RemoveImplCopyWithImpl<$Res>
 
   /// Create a copy of UploadImageState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? imageUrl = null,
-  }) {
-    return _then(_$RemoveImpl(
-      imageUrl: null == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$RemoveImpl implements _Remove {
-  const _$RemoveImpl({required this.imageUrl});
-
-  @override
-  final String imageUrl;
+  const _$RemoveImpl();
 
   @override
   String toString() {
-    return 'UploadImageState.remove(imageUrl: $imageUrl)';
+    return 'UploadImageState.remove()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RemoveImpl &&
-            (identical(other.imageUrl, imageUrl) ||
-                other.imageUrl == imageUrl));
+        (other.runtimeType == runtimeType && other is _$RemoveImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, imageUrl);
-
-  /// Create a copy of UploadImageState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RemoveImplCopyWith<_$RemoveImpl> get copyWith =>
-      __$$RemoveImplCopyWithImpl<_$RemoveImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -660,9 +632,9 @@ class _$RemoveImpl implements _Remove {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function() failure,
-    required TResult Function(String imageUrl) remove,
+    required TResult Function() remove,
   }) {
-    return remove(imageUrl);
+    return remove();
   }
 
   @override
@@ -672,9 +644,9 @@ class _$RemoveImpl implements _Remove {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function()? failure,
-    TResult? Function(String imageUrl)? remove,
+    TResult? Function()? remove,
   }) {
-    return remove?.call(imageUrl);
+    return remove?.call();
   }
 
   @override
@@ -684,11 +656,11 @@ class _$RemoveImpl implements _Remove {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function()? failure,
-    TResult Function(String imageUrl)? remove,
+    TResult Function()? remove,
     required TResult orElse(),
   }) {
     if (remove != null) {
-      return remove(imageUrl);
+      return remove();
     }
     return orElse();
   }
@@ -735,13 +707,5 @@ class _$RemoveImpl implements _Remove {
 }
 
 abstract class _Remove implements UploadImageState {
-  const factory _Remove({required final String imageUrl}) = _$RemoveImpl;
-
-  String get imageUrl;
-
-  /// Create a copy of UploadImageState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RemoveImplCopyWith<_$RemoveImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _Remove() = _$RemoveImpl;
 }
