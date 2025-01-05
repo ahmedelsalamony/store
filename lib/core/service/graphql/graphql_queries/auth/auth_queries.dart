@@ -1,4 +1,6 @@
 import 'package:store/features/auth/data/models/login_request_body.dart';
+import 'package:store/features/auth/data/models/signup_request_body.dart';
+import 'package:store/features/auth/presentation/widgets/singup_body.dart';
 
 class AuthQueries {
   factory AuthQueries() => _instance;
@@ -17,6 +19,28 @@ class AuthQueries {
         'variables': {
           'email': login.email,
           'password': login.password,
+        },
+      };
+
+  Map<String, dynamic> signupMapQuery(
+          {required SignupRequestBody signupBody}) =>
+      {
+        'query':
+            r'''mutation signup($name: String!,$email: String!, $password: String!,$avatar: String!) {
+      addUser{
+      data: {
+        name: $name,
+        email: $email,
+        password: $password,
+        avatar: $avatar
+      }
+      }
+    }''',
+        'variables': {
+          'name': signupBody.name,
+          'email': signupBody.email,
+          'password': signupBody.password,
+          'avatar': signupBody.avatar
         },
       };
 }
