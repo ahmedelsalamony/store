@@ -20,41 +20,44 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final TextEditingController nameController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
-  AuthBloc(this._authRepo) : super(const _Initial());
-
-  FutureOr<void> _login(_LoginEvent event, Emitter<AuthState> emit) async {
-    emit(const _Loading());
-    final result = await _authRepo.login(LoginRequestBody(
-      email: emailController.text.trim(),
-      password: passwordController.text,
-    ));
-    await result.when(success: (success) async {
-      final token = success.data.login.token ?? '';
-      await SharedPref.sharedPreferences
-          .setString(PrefsKeys.accessToken, token);
-      await _authRepo.userRole(token).then((value) async {
-        emit(_Success(userRole: value.userRole ?? ''));
-        await SharedPref.sharedPreferences
-            .setString(PrefsKeys.userRole, value.userRole ?? '');
-      });
-    }, failure: (error) {
-      emit(_Failure(error));
-    });
-  }
-
-  FutureOr<void> _signup(_SignupEvent event, Emitter<AuthState> emit) async {
-    emit(const _Loading());
-    final result = await _authRepo.signup(SignupRequestBody(
-      email: emailController.text.trim(),
-      password: passwordController.text,
-      name: nameController.text.trim(),
-      avatar: event.avatarUrl,
-      role: 'user',
-    ));
-    await result.when(success: (success) async {
-      add(const AuthEvent.login());
-    }, failure: (error) {
-      emit(_Failure(error));
+  AuthBloc(this._authRepo) : super(const _Initial()) {
+    on<AuthEvent>((event, emit) async {
+      if (event is LoginEvent) {
+        emit(const _Loading());
+        final result = await _authRepo.login(LoginRequestBody(
+          email: emailController.text.trim(),
+          password: passwordController.text,
+        ));
+        await result.when(success: (success) async {
+          final token = success.data.login.token ?? '';
+          await SharedPref.sharedPreferences
+              .setString(PrefsKeys.accessToken, token);
+          await _authRepo.userRole(token).then((value) async {
+            emit(_Success(userRole: value.userRole ?? ''));
+            await SharedPref.sharedPreferences
+                .setString(PrefsKeys.userRole, value.userRole ?? '');
+          });
+        }, failure: (error) {
+          emit(_Failure(error));
+        });
+      } else if (event is SignupEvent) {
+        emit(const _Loading());
+        final result = await _authRepo.signup(SignupRequestBody(
+          email: emailController.text.trim(),
+          password: passwordController.text,
+          name: nameController.text.trim(),
+          avatar: event.avatarUrl,
+          role: 'customer',
+        ));
+        await result.when(success: (success) async {
+          debugPrint("inside success state of auth bloc before call login");
+          add(const AuthEvent.login());
+          debugPrint("inside success state of auth bloc after call login");
+        }, failure: (error) {
+          debugPrint("inside failure state of auth bloc $error");
+          emit(_Failure(error));
+        });
+      }
     });
   }
 }

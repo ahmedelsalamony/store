@@ -27,12 +27,12 @@ Map<String, dynamic> _$SignupDataModelToJson(SignupDataModel instance) =>
     };
 
 AddUserModel _$AddUserModelFromJson(Map<String, dynamic> json) => AddUserModel(
-      name: json['name'] as String,
-      id: (json['id'] as num).toInt(),
+      email: json['email'] as String,
+      id: json['id'] as String,
     );
 
 Map<String, dynamic> _$AddUserModelToJson(AddUserModel instance) =>
     <String, dynamic>{
-      'name': instance.name,
+      'email': instance.email,
       'id': instance.id,
     };

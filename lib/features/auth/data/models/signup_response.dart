@@ -28,11 +28,11 @@ class SignupDataModel {
 
 @JsonSerializable()
 class AddUserModel {
-  final String name;
-  final int id;
+  final String email;
+  final String id;
 
   const AddUserModel({
-    required this.name,
+    required this.email,
     required this.id,
   });
 

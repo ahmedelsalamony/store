@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
 import 'package:store/core/service/graphql/api_result.dart';
 import 'package:store/core/utils/app_strings.dart';
 import 'package:store/features/auth/data/data_source/auth_data_source.dart';
@@ -27,10 +28,12 @@ class AuthRepo {
   }
 
   Future<ApiResult> signup(SignupRequestBody signup) async {
+    dynamic response;
     try {
-      final response = await _authDataSource.signup(signup);
+      response = await _authDataSource.signup(signup);
       return ApiResult.success(response);
     } catch (e) {
+      debugPrint("signup Exception ===>  $response");
       return const ApiResult.failure(errorMessage);
     }
   }

@@ -27,6 +27,13 @@ class _LoginTextFormState extends State<LoginTextForm> {
   }
 
   @override
+  void dispose() {
+    _authBloc.emailController.dispose();
+    _authBloc.passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Form(
       key: _authBloc.formKey,

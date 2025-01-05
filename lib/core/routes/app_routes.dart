@@ -36,6 +36,7 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (_) => MultiBlocProvider(providers: [
                   BlocProvider(create: (context) => sl<UploadImageCubit>()),
+                  BlocProvider(create: (context) => sl<AuthBloc>())
                 ], child: const SignupScreen()));
       case homeAdmin:
         return MaterialPageRoute(builder: (_) => const HomeAdmin());

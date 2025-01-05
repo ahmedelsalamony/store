@@ -26,14 +26,18 @@ class AuthQueries {
           {required SignupRequestBody signupBody}) =>
       {
         'query':
-            r'''mutation signup($name: String!,$email: String!, $password: String!,$avatar: String!) {
-      addUser{
+            r'''mutation Signup($name: String!,$email: String!, $password: String!,$avatar: String!) {
+      addUser(
       data: {
         name: $name,
         email: $email,
         password: $password,
-        avatar: $avatar
+        avatar: $avatar,
+        role: customer
       }
+      ){
+      id
+      email
       }
     }''',
         'variables': {

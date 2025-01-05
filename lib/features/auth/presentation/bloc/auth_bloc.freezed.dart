@@ -41,22 +41,22 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_LoginEvent value) login,
-    required TResult Function(_SignupEvent value) signup,
+    required TResult Function(LoginEvent value) login,
+    required TResult Function(SignupEvent value) signup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_LoginEvent value)? login,
-    TResult? Function(_SignupEvent value)? signup,
+    TResult? Function(LoginEvent value)? login,
+    TResult? Function(SignupEvent value)? signup,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_LoginEvent value)? login,
-    TResult Function(_SignupEvent value)? signup,
+    TResult Function(LoginEvent value)? login,
+    TResult Function(SignupEvent value)? signup,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -158,8 +158,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_LoginEvent value) login,
-    required TResult Function(_SignupEvent value) signup,
+    required TResult Function(LoginEvent value) login,
+    required TResult Function(SignupEvent value) signup,
   }) {
     return started(this);
   }
@@ -168,8 +168,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_LoginEvent value)? login,
-    TResult? Function(_SignupEvent value)? signup,
+    TResult? Function(LoginEvent value)? login,
+    TResult? Function(SignupEvent value)? signup,
   }) {
     return started?.call(this);
   }
@@ -178,8 +178,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_LoginEvent value)? login,
-    TResult Function(_SignupEvent value)? signup,
+    TResult Function(LoginEvent value)? login,
+    TResult Function(SignupEvent value)? signup,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -214,7 +214,7 @@ class __$$LoginEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoginEventImpl implements _LoginEvent {
+class _$LoginEventImpl implements LoginEvent {
   const _$LoginEventImpl();
 
   @override
@@ -269,8 +269,8 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_LoginEvent value) login,
-    required TResult Function(_SignupEvent value) signup,
+    required TResult Function(LoginEvent value) login,
+    required TResult Function(SignupEvent value) signup,
   }) {
     return login(this);
   }
@@ -279,8 +279,8 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_LoginEvent value)? login,
-    TResult? Function(_SignupEvent value)? signup,
+    TResult? Function(LoginEvent value)? login,
+    TResult? Function(SignupEvent value)? signup,
   }) {
     return login?.call(this);
   }
@@ -289,8 +289,8 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_LoginEvent value)? login,
-    TResult Function(_SignupEvent value)? signup,
+    TResult Function(LoginEvent value)? login,
+    TResult Function(SignupEvent value)? signup,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -300,8 +300,8 @@ class _$LoginEventImpl implements _LoginEvent {
   }
 }
 
-abstract class _LoginEvent implements AuthEvent {
-  const factory _LoginEvent() = _$LoginEventImpl;
+abstract class LoginEvent implements AuthEvent {
+  const factory LoginEvent() = _$LoginEventImpl;
 }
 
 /// @nodoc
@@ -339,7 +339,7 @@ class __$$SignupEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignupEventImpl implements _SignupEvent {
+class _$SignupEventImpl implements SignupEvent {
   const _$SignupEventImpl({required this.avatarUrl});
 
   @override
@@ -408,8 +408,8 @@ class _$SignupEventImpl implements _SignupEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_LoginEvent value) login,
-    required TResult Function(_SignupEvent value) signup,
+    required TResult Function(LoginEvent value) login,
+    required TResult Function(SignupEvent value) signup,
   }) {
     return signup(this);
   }
@@ -418,8 +418,8 @@ class _$SignupEventImpl implements _SignupEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_LoginEvent value)? login,
-    TResult? Function(_SignupEvent value)? signup,
+    TResult? Function(LoginEvent value)? login,
+    TResult? Function(SignupEvent value)? signup,
   }) {
     return signup?.call(this);
   }
@@ -428,8 +428,8 @@ class _$SignupEventImpl implements _SignupEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_LoginEvent value)? login,
-    TResult Function(_SignupEvent value)? signup,
+    TResult Function(LoginEvent value)? login,
+    TResult Function(SignupEvent value)? signup,
     required TResult orElse(),
   }) {
     if (signup != null) {
@@ -439,8 +439,8 @@ class _$SignupEventImpl implements _SignupEvent {
   }
 }
 
-abstract class _SignupEvent implements AuthEvent {
-  const factory _SignupEvent({required final String avatarUrl}) =
+abstract class SignupEvent implements AuthEvent {
+  const factory SignupEvent({required final String avatarUrl}) =
       _$SignupEventImpl;
 
   String get avatarUrl;
