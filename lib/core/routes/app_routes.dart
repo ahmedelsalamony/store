@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store/core/app/upload_image/cubit/cubit/upload_image_cubit.dart';
 import 'package:store/core/di/injection_container.dart';
 import 'package:store/features/admin/presentation/screens/home_admin.dart';
 import 'package:store/features/auth/presentation/bloc/auth_bloc.dart';
@@ -32,7 +33,11 @@ class AppRoutes {
                   child: const LoginScreen(),
                 ));
       case signupScreen:
-        return MaterialPageRoute(builder: (_) => const SignupScreen());
+        return MaterialPageRoute(
+            builder: (_) => MultiBlocProvider(providers: [
+                  BlocProvider(create: (context) => sl<UploadImageCubit>()),
+                  BlocProvider(create: (context) => sl<AuthBloc>())
+                ], child: const SignupScreen()));
       case homeAdmin:
         return MaterialPageRoute(builder: (_) => const HomeAdmin());
       case homeCustomer:

@@ -3,5 +3,6 @@ part of 'auth_bloc.dart';
 @freezed
 class AuthEvent with _$AuthEvent {
   const factory AuthEvent.started() = _Started;
-  const factory AuthEvent.login() = _Login;
+  const factory AuthEvent.login() = LoginEvent;
+  const factory AuthEvent.signup({required String avatarUrl}) = SignupEvent;
 }
