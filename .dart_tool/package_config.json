@@ -344,6 +344,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_zoom_drawer",
+      "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/flutter_zoom_drawer-3.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "fluttertoast",
       "rootUri": "file:///Users/mac/.pub-cache/hosted/pub.dev/fluttertoast-8.2.10",
       "packageUri": "lib/",
@@ -896,7 +902,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2025-01-01T14:57:24.541045Z",
+  "generated": "2025-01-06T11:23:59.282794Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Users/mac/dev/fluttersdk/flutter",

@@ -50,6 +50,7 @@ class StoreApp extends StatelessWidget {
                           AppLocalizationsSetup.localeResolutionCallback,
                       supportedLocales: AppLocalizationsSetup.supportedLocales,
                       onGenerateRoute: AppRoutes.generateRoute,
+                      //TODO change initial route when login as admin and customer
                       initialRoute: SharedPref.sharedPreferences
                                   .getString(PrefsKeys.accessToken) !=
                               null
@@ -57,7 +58,7 @@ class StoreApp extends StatelessWidget {
                                       .getString(PrefsKeys.userRole) ==
                                   "admin"
                               ? AppRoutes.homeAdmin
-                              : AppRoutes.homeCustomer
+                              : AppRoutes.homeAdmin
                           : AppRoutes.loginScreen,
                       builder: (context, child) {
                         return Scaffold(
