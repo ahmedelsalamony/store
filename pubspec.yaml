@@ -15,6 +15,7 @@ dependencies:
   flutter_native_splash: ^2.4.3
   flutter_screenutil: ^5.9.3
   animate_do: ^3.3.4
+  shimmer: ^3.0.0
   #firebase
   firebase_core: ^3.8.0
   #Utils
@@ -54,6 +55,9 @@ flutter:
   assets:
     - assets/images/customer/user.png
     - assets/images/admin/drawer_image.png
+    - assets/images/admin/categories_drawer.png
+    - assets/images/admin/users_drawer.png
+    - assets/images/admin/products_drawer.png
     - assets/lang/ar.json
     - assets/lang/en.json
     - lib/.env.dev
